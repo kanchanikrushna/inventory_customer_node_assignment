@@ -2,9 +2,9 @@
 import 'reflect-metadata';
 import { InversifyExpressServer } from 'inversify-express-utils';
 import { Container } from 'inversify';
-import { bindings } from './config/inversify.config';
+import { bindings } from './infrastructure/config/inversify.config';
 import './interfaces_adapters/controller/customer.controller'
-import { PipeLineSetUp } from './config/middleware/pipeline-setup';
+import { PipeLineSetUp } from './infrastructure/config/middleware/pipeline-setup';
 
 (async () => {
 

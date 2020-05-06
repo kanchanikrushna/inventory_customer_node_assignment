@@ -1,14 +1,15 @@
-import { CustomerService } from './../infrastructure/service/CustomerService';
-import { ICustomerService } from './../interfaces_adapters/services/ICustomerService';
-import { Customer } from './../domain/entities/customer';
+import { ProductApi } from '../external-api/product-api';
+import { CustomerService } from '../service/CustomerService';
+import { ICustomerService } from '../../interfaces_adapters/services/ICustomerService';
+import { Customer } from '../../domain/entities/customer';
 import { AsyncContainerModule } from "inversify";
 
-import TYPES from "../domain/constant/types";
+import TYPES from "../../domain/constant/types";
 import { Repository } from "typeorm";
-import { GenericRepository } from "../infrastructure/repositories/GenericRepository";
-import { getDbConnection } from "../infrastructure/repositories/db";
-import { Cart } from "../domain/entities/cart";
-import { IGenericRepository } from "../interfaces_adapters/repositories/IGenericRepository";
+import { GenericRepository } from "../repositories/GenericRepository";
+import { getDbConnection } from "../repositories/db";
+import { Cart } from "../../domain/entities/cart";
+import { IGenericRepository } from "../../interfaces_adapters/repositories/IGenericRepository";
 
 
 export const bindings = new AsyncContainerModule(async (bind) => {
@@ -29,5 +30,6 @@ export const bindings = new AsyncContainerModule(async (bind) => {
 
 
     bind<ICustomerService>(TYPES.CustomerService).to(CustomerService).inTransientScope();
+    bind<ProductApi>(TYPES.ProductApi).to(ProductApi).inTransientScope();
 
 });

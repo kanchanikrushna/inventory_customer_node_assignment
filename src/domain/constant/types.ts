@@ -4,7 +4,8 @@ const TYPES = {
     ProductRepository: Symbol.for('ProductRepository'),
     CartRepository: Symbol.for('CarRepository'),
     GenericRepository: Symbol.for('GenericRepository'),
-    CustomerRepository: Symbol.for('CustomerRepository')
+    CustomerRepository: Symbol.for('CustomerRepository'),
+    ProductApi: Symbol.for('ProductApi')
 
 };
 
